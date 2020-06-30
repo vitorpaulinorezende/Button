@@ -1,0 +1,74 @@
+* {
+	margin: 0;
+	padding: 0;
+	background: #001a16;
+}
+
+body {
+	display: flex;
+	justify-content: center;
+	font-family: monospace;
+	margin-top: 240px;
+	color: #c5e0dd;
+}
+
+.btn {
+	background: #010807;
+	border-radius: 5px;
+	padding: 25px;
+	font-size: 50px;
+	animation: blur 2s linear;
+}
+
+@keyframes blur {
+	0%{
+		filter: blur(50px);
+	}
+	100%{
+		filter: blur(0px);
+	}
+}
+
+.container{
+	animation: rotate 2s linear;
+	padding: 0px;
+	display: flex;
+}
+
+@keyframes rotate {
+	0%{
+		transform: skewY(20deg);
+	}
+	100%{
+		transform: skewY(0deg);
+	}
+}
+
+.bg{
+	display: flex;
+	position: absolute;
+	padding: 70px;
+	background: rgba(50, 168, 82, .5);
+	filter: blur(20px);
+	opacity: 0;
+	width: 160px;
+	top: 33%;
+	animation: visi 2s linear;
+	animation-delay: 2s;
+}
+
+@keyframes visi {
+	0%{
+		opacity: 0;
+	}
+	50%{
+		opacity: .5;
+	}
+	100%{
+		opacity: 0;
+	}
+}
+
+.btn:hover .bg{
+	animation: visi 2s linear;
+}
